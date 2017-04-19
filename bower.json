@@ -1,12 +1,12 @@
 {
-  "name": "Exercicio Prova",
+  "name": "prova-escola-de-ti",
+  "homepage": "https://github.com/jcmestti/prova-escola-de-ti",
   "authors": [
     "jcmestti <jcmestti@gmail.com>"
   ],
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",

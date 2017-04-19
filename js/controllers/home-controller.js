@@ -1,4 +1,4 @@
 angular.module('Vendas')
-    .controller('homeController', function($scope) {
+    .controller('HomeController', function($scope) {
         
     });

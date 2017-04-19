@@ -1,6 +1,6 @@
 <div>
-    <input type="text" placeholder="Search">
-    <button>Novo</button>
+    <input type="text" placeholder="Busca" ng-model="busca">
+    <a href="/#!/produtos/novo"><button>Novo</button></a>
     <table>
         <thead>
             <tr>
@@ -11,13 +11,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="produto in listaProdutos">
+            <tr ng-repeat="produto in listaProdutos | filter: busca">
                 <td>{{produto.codigo}}</td>
                 <td>{{produto.descricao}}</td>
                 <td>{{produto.preco}}</td>
                 <td>
-                    <a href="#"><button>Editar</button></a>
-                    <a href="#"><button>Excluir</button></a>
+                    <button>Editar</button>
+                    <button ng-click="excluirProduto($index)">Excluir</button>
                 </td>  
             </tr>
         </tbody>
