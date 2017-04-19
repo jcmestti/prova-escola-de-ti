@@ -1,0 +1,25 @@
+<div>
+    <input type="text" placeholder="Search">
+    <button>Novo</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="produto in listaProdutos">
+                <td>{{produto.codigo}}</td>
+                <td>{{produto.descricao}}</td>
+                <td>{{produto.preco}}</td>
+                <td>
+                    <a href="#"><button>Editar</button></a>
+                    <a href="#"><button>Excluir</button></a>
+                </td>  
+            </tr>
+        </tbody>
+    </table>
+</div>
