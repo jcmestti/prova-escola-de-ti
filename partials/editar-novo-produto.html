@@ -1,0 +1,15 @@
+<div class="new-product-container jumbotron">
+    <form name="newProductForm">
+        <label for="">Código</label>
+        <input type="text" style="width: 100px" ng-model="produto.codigo" ng-required="true">
+        
+        <label for="">Descrição</label>
+        <input type="text" style="width: 400px" ng-model="produto.descricao" ng-required="true">
+        
+        <label for="">Preço</label>
+        <input type="text" style="width: 100px" ng-model="produto.preco" ng-required="true">
+        
+        <button class="btn btn-primary" ng-click="salvar(produto)" ng-disabled="newProductForm.$invalid">Salvar</button>
+        <button class="btn btn-danger" ng-click="cancelarProduto()">Cancelar</button>
+    </form>
+</div>

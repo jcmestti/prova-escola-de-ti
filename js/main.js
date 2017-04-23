@@ -2,18 +2,23 @@ angular.module('Vendas', ['ngRoute'])
     .config(function($routeProvider) {
         
         $routeProvider.when('/home', {
-            controller : 'HomeController',
+            controller: 'HomeController',
             templateUrl: 'partials/home.html'
         });
         
         $routeProvider.when('/produtos', {
-            controller : 'ProdutosController',
+            controller: 'ProdutosController',
             templateUrl: 'partials/produtos.html'
         });
         
         $routeProvider.when('/produtos/novo', {
-            controller : 'NovoProdutoController',
-            templateUrl: 'partials/novo-produto.html'
+            controller: 'NovoProdutoController',
+            templateUrl: 'partials/editar-novo-produto.html'
+        });
+        
+        $routeProvider.when('/produto/:codigo', {
+           controller: 'EditarProdutoController',
+           templateUrl: 'partials/editar-novo-produto.html' 
         });
         
         $routeProvider.otherwise({redirectTo : '/home'});

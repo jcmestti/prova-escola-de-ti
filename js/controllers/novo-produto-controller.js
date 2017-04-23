@@ -1,14 +1,23 @@
 angular.module('Vendas')
-    .controller("NovoProdutoController", function($scope, ProdutosService) {
-        
-        $scope.novoProduto = {
+    .controller("NovoProdutoController", function($scope, ProdutosService, $location) {
+   
+        $scope.produto = {
             codigo: '',
             descricao: '',
             preco: ''
         }
         
-        $scope.adicionarProduto = function(novoProduto) {
+        $scope.salvar = function(novoProduto) {
             ProdutosService.adicionarProduto(novoProduto);
+            $location.path('/produtos');
+        }
+        
+        $scope.cancelarProduto = function() {
+            $scope.produto.codigo = '';
+            $scope.produto.descricao = '';
+            $scope.produto.preco = '';
+            
+            $location.path('/produtos');
         }
         
     });

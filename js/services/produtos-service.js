@@ -23,7 +23,25 @@ angular.module('Vendas')
         }
         
         service.adicionarProduto = function(novoProduto) {
-            listaProdutos.push(angular.copy(novoProduto));
+            listaProdutos.push(novoProduto);
+        }
+        
+        service.buscarPeloCodigo = function(codigo) {
+            var produto = listaProdutos.find(function(elemento) {
+                return elemento.codigo == codigo;
+            });
+            
+            return angular.copy(produto);
+        }
+        
+        service.atualizarProduto = function(produtoAtualizado) {
+            var produto = listaProdutos.find(function(elemento) {
+                return elemento.codigo == produtoAtualizado.codigo;
+            });
+            
+            produto.descricao = produtoAtualizado.descricao;
+            produto.preco = produtoAtualizado.preco;
+            
         }
         
         return service;

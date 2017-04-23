@@ -1,23 +1,26 @@
-<div>
-    <input type="text" placeholder="Busca" ng-model="busca">
-    <a href="/#!/produtos/novo"><button>Novo</button></a>
-    <table>
+<div class="products-container jumbotron">
+    <h3 class="products-header">Inserir Produto</h3>
+    <div class="search-bar-container">
+        <input type="text" class="search-bar" placeholder="Busca" ng-model="busca">
+        <button ng-click="goTo('/produtos/novo')" class="btn btn-primary search-bar-btn">Novo</button>
+    </div>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>Código</th>
-                <th>Descrição</th>
-                <th>Preço</th>
-                <th>Ações</th>
+                <td>Código</td>
+                <td>Descrição</td>
+                <td>Preço</td>
+                <td>Ações</td>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="produto in listaProdutos | filter: busca">
                 <td>{{produto.codigo}}</td>
                 <td>{{produto.descricao}}</td>
-                <td>{{produto.preco}}</td>
+                <td>{{produto.preco | number: 2}}</td>
                 <td>
-                    <button>Editar</button>
-                    <button ng-click="excluirProduto($index)">Excluir</button>
+                    <button class="btn btn-warning" ng-click="goTo('/produto/' + produto.codigo)">Editar</button>
+                    <button class="btn btn-danger" ng-click="excluirProduto($index)">Excluir</button>
                 </td>  
             </tr>
         </tbody>
